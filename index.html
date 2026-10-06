@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tushar's Physiotherapy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Tushar's Physiotherapy</h1>
+    <p>Home Physiotherapy Management System</p>
+</header>
+
+<div class="container">
+
+    <!-- Dashboard -->
+
+    <section class="dashboard">
+
+        <div class="card">
+            <h3>Total Patients</h3>
+            <p id="totalPatients">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Visits</h3>
+            <p id="totalVisits">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Income</h3>
+            <p>৳ <span id="totalIncome">0</span></p>
+        </div>
+
+        <div class="card">
+            <h3>Total Due</h3>
+            <p>৳ <span id="totalDue">0</span></p>
+        </div>
+
+    </section>
+
+
+    <!-- Add Patient -->
+
+    <section class="box">
+
+        <h2>➕ Add New Patient</h2>
+
+        <input id="patientName" type="text" placeholder="Patient Name">
+
+        <input id="patientPhone" type="tel" placeholder="Mobile Number">
+
+        <input id="patientAge" type="number" placeholder="Age">
+
+        <input id="patientAddress" type="text" placeholder="Address">
+
+        <input id="patientProblem" type="text"
+               placeholder="Problem / Diagnosis">
+
+        <button onclick="addPatient()">Save Patient</button>
+
+    </section>
+
+
+    <!-- New Visit -->
+
+    <section class="box">
+
+        <h2>🏠 New Home Visit</h2>
+
+        <select id="visitPatient">
+            <option value="">Select Patient</option>
+        </select>
+
+        <input id="visitDate" type="date">
+
+        <input id="visitProblem" type="text"
+               placeholder="Problem">
+
+        <input id="treatment" type="text"
+               placeholder="Treatment Given">
+
+        <input id="sessionFee" type="number"
+               placeholder="Session Fee">
+
+        <input id="paidAmount" type="number"
+               placeholder="Paid Amount">
+
+        <select id="paymentMethod">
+
+            <option value="Cash">Cash</option>
+            <option value="bKash">bKash</option>
+            <option value="Nagad">Nagad</option>
+            <option value="Bank">Bank</option>
+
+        </select>
+
+        <input id="visitNote" type="text"
+               placeholder="Notes">
+
+        <button onclick="addVisit()">Save Visit</button>
+
+    </section>
+
+
+    <!-- Patient List -->
+
+    <section class="box">
+
+        <h2>👥 Patients</h2>
+
+        <input id="searchPatient"
+               type="text"
+               placeholder="Search patient..."
+               onkeyup="displayPatients()">
+
+        <div id="patientList"></div>
+
+    </section>
+
+
+    <!-- Visit History -->
+
+    <section class="box">
+
+        <h2>📋 Visit History</h2>
+
+        <div id="visitList"></div>
+
+    </section>
+
+
+    <!-- Monthly Report -->
+
+    <section class="box">
+
+        <h2>📊 Monthly Report</h2>
+
+        <button onclick="monthlyReport()">
+            Generate Current Month Report
+        </button>
+
+        <div id="monthlyReport"></div>
+
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
